@@ -74,6 +74,7 @@ body {
 	height: 7rem;
 	background-color: #faf0dc;
 	position: fixed;
+	top: 0rem;
 }
 
 .round-button-circle {
@@ -85,4 +86,26 @@ body {
 	overflow: hidden;
 	background: #4679bd;
 	box-shadow: 0 0 3px gray;
+}
+
+.main-phrase h1 {
+	width: 100%;
+	margin-left: 5rem;
+	margin-top: 2rem;
+	font-family: 'Rubik', sans-serif;
+	color: black;
+	font-size: 60;
+}
+
+.main-phrase p {
+	width: 40%;
+	margin-left: 5rem;
+	margin-top: 6rem;
+	font-family: 'Rubik', sans-serif;
+	color: black;
+	font-size: 20;
+}
+
+.main-section {
+	margin-top: 10rem;
 }
