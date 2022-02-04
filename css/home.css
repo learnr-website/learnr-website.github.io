@@ -7,6 +7,8 @@ h1 {
 body {
 	background-color: rgb(174, 227, 240);
 	vertical-align: baseliine;
+	padding: 0;
+	margin: 0;
 }
 
 .flex-logo-and-name img {
@@ -56,9 +58,20 @@ body {
 	font-weight: 200;
 }
 
+.flex-profile img {
+	float: right;
+	border-radius: 50%;
+	right: 2rem;
+	top: 2rem;
+	width: 4rem;
+	height: 4rem;
+	margin-right: 3rem;
+	margin-top: 1rem;
+}
+
 .top-header {
 	width: 100%;
-	height: 6rem;
+	height: 7rem;
 	background-color: #faf0dc;
 	position: fixed;
 }
