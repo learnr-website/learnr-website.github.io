@@ -1,5 +1,6 @@
 h1 {
 	text-align: left;
+<<<<<<< HEAD
 	color: black;
 	font-family: 'Belleza', sans-serif;
 }
@@ -176,4 +177,13 @@ body {
 
 .main-section {
 	margin-top: 10rem;
+=======
+	color: white;
+	font-family: Tahoma;
+}
+
+body {
+	background-color: slategrey;
+	vertical-align: baseliine;
+>>>>>>> 3afb137 (first commit)
 }
