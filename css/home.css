@@ -1,11 +1,33 @@
+@keyframes heading-in {
+	from {
+		margin-top: 0rem;
+		opacity: 0%;
+	}
+	to {
+		margin-top: 1rem;
+		opacity: 100%;
+	}
+}
+
+@keyframes heading-in-videos {
+	from {
+		margin-top: -1rem;
+		opacity: 0%;
+	}
+	to {
+		margin-top: 0rem;
+		opacity: 100%;
+	}
+}
+
 h1 {
 	text-align: left;
 	color: black;
-	font-family: 'Belleza', sans-serif;
+	font-family: 'Poppins', sans-serif;
 }
 
 body {
-	background-color: rgb(174, 227, 240);
+	background-color: #daf5fc;
 	vertical-align: baseliine;
 	padding: 0;
 	margin: 0;
@@ -24,6 +46,8 @@ body {
 	line-height: 0;
 	box-sizing: content-box;
 	object-fit: contain;
+	animation-name: heading-in-videos;
+	animation-duration: 1.5s;
 }
 
 .flex-logo-and-name img {
@@ -74,7 +98,8 @@ body {
 }
 
 .flex-top-center-menu button:hover {
-	background: linear-gradient(to bottom, #ebdcf8 0%, #ffd1dc 100%);
+	background: black;
+	color: white;
 }
 
 .flex-top-center-menu button:active {
@@ -114,9 +139,9 @@ body {
 }
 
 .top-header {
-	width: 100%;
+	width: 150%;
 	height: 5.5rem;
-	background-color: #faf0dc;
+	background-color: #fdf6e8;
 	position: fixed;
 	top: 0rem;
 	z-index: 1;
@@ -141,6 +166,8 @@ body {
 	color: black;
 	font-size: 60;
 	display: inline-block;
+	animation-name: heading-in;
+	animation-duration: 1s;
 }
 
 .main-phrase p {
@@ -151,9 +178,12 @@ body {
 	color: black;
 	font-size: 20;
 	display: flex;
+	animation-name: heading-in;
+	animation-duration: 1.5s;
 }
 .main-phrase button:hover {
-	background: linear-gradient(to bottom, #ebdcf8 0%, #ffd1dc 100%);
+	background: darkblue;
+	color: white;
 }
 
 .main-phrase button:active {
