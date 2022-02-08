@@ -11,6 +11,21 @@ body {
 	margin: 0;
 }
 
+.main-videos {
+	float: right;
+	top: 10rem;
+	right: 5rem;
+	z-index: 0;
+	display: block;
+	position: absolute;
+	border-color: white;
+	border-style: solid;
+	border-width: 0.25rem;
+	line-height: 0;
+	box-sizing: content-box;
+	object-fit: contain;
+}
+
 .flex-logo-and-name img {
 	float: left;
 	object-fit: contain;
@@ -59,24 +74,44 @@ body {
 }
 
 .flex-top-center-menu button:hover {
-	background-color: #fae474;
+	background: linear-gradient(to bottom, #ebdcf8 0%, #ffd1dc 100%);
 }
 
 .flex-top-center-menu button:active {
 	box-shadow: 0 5px #666;
 	transform: translateY(3px);
-  }
-
-.flex-profile img {
-	float: right;
-	border-radius: 50%;
-	right: 2rem;
-	width: 3.6rem;
-	height: 3.6rem;
-	margin-right: 3rem;
-	margin-top: 0.9rem;
 }
 
+.init-profile {
+	border-radius: 50%;
+	width: 3.2rem;
+	height: 3.2rem;
+	border-style: solid;
+	border-color: grey;
+	border-width: 0.2rem;
+	position: fixed;
+	float: right;
+	right: 2rem;
+	margin-right: 3rem;
+	margin-top: 0.9rem;
+	z-index: 1;
+}
+
+.clicked-profile {
+	border-radius: 50%;
+	border-style: solid;
+	border-color: white;
+	border-width: 0.2rem;
+	width: 3.2rem;
+	height: 3.2rem;
+	position: fixed;
+	opacity: 40%;
+	float: right;
+	right: 2rem;
+	margin-right: 3rem;
+	margin-top: 0.9rem;
+	z-index: 1;
+}
 
 .top-header {
 	width: 100%;
@@ -84,6 +119,7 @@ body {
 	background-color: #faf0dc;
 	position: fixed;
 	top: 0rem;
+	z-index: 1;
 }
 
 .round-button-circle {
@@ -98,30 +134,32 @@ body {
 }
 
 .main-phrase h1 {
-	width: 100%;
+	width: 40%;
 	margin-left: 5rem;
-	margin-top: 4rem;
+	margin-top: 1rem;
 	font-family: 'Rubik', sans-serif;
 	color: black;
 	font-size: 60;
+	display: inline-block;
 }
 
 .main-phrase p {
 	width: 40%;
 	margin-left: 5rem;
-	margin-top: 4rem;
+	margin-top: 1rem;
 	font-family: 'Rubik', sans-serif;
 	color: black;
 	font-size: 20;
+	display: flex;
 }
 .main-phrase button:hover {
-	background-color: #fae474;
-  }
+	background: linear-gradient(to bottom, #ebdcf8 0%, #ffd1dc 100%);
+}
 
 .main-phrase button:active {
 	box-shadow: 0 5px gray;
 	transform: translateY(3px);
-  }
+}
 
 .main-phrase button {
 	margin-top: 3rem;
@@ -135,7 +173,6 @@ body {
 	font-size: 20;
 	background-color: white;
 }
-
 
 .main-section {
 	margin-top: 10rem;
