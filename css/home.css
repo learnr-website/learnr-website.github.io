@@ -33,6 +33,47 @@ body {
 	margin: 0;
 }
 
+.subject-buttons {
+	display: inline-block;
+}
+
+.subject-buttons button {
+	z-index: -1;
+	height: 6rem;
+	width: 6rem;
+	border-radius: 60px;
+	font-size: 20;
+	font-weight: bold;
+	border: none;
+	color: black;
+	background-color: white;
+}
+
+.subject-buttons button:hover {
+	background-color: silver;
+	color: white;
+}
+
+.subject-buttons button:active {
+	box-shadow: 0 5px #666;
+	transform: translateY(3px);
+}
+
+.button-label {
+	margin-left: 5rem;
+	margin-top: 3rem;
+	padding: 1.5rem;
+	display: inline-block;
+	text-align: center;
+}
+
+.button-label p {
+	display: block;
+	text-align: center;
+	font-family: 'Rubik', sans-serif;
+	font-weight: 400;
+}
+
 .main-videos {
 	float: right;
 	top: 10rem;
@@ -158,7 +199,7 @@ body {
 	box-shadow: 0 0 3px gray;
 }
 
-.main-phrase h1 {
+.main-phrase-top h1 {
 	width: 40%;
 	margin-left: 5rem;
 	margin-top: 1rem;
@@ -170,7 +211,7 @@ body {
 	animation-duration: 1s;
 }
 
-.main-phrase p {
+.main-phrase-top p {
 	width: 40%;
 	margin-left: 5rem;
 	margin-top: 1rem;
@@ -181,17 +222,17 @@ body {
 	animation-name: heading-in;
 	animation-duration: 1.5s;
 }
-.main-phrase button:hover {
+.main-phrase-top button:hover {
 	background: darkblue;
 	color: white;
 }
 
-.main-phrase button:active {
+.main-phrase-top button:active {
 	box-shadow: 0 5px gray;
 	transform: translateY(3px);
 }
 
-.main-phrase button {
+.main-phrase-top button {
 	margin-top: 3rem;
 	margin-left: 5rem;
 	border: none;
