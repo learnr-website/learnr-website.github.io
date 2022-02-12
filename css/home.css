@@ -27,7 +27,7 @@ h1 {
 }
 
 body {
-	background-color: #daf5fc;
+	background-color: #d1f3fc;
 	vertical-align: baseliine;
 	padding: 0;
 	margin: 0;
@@ -50,9 +50,10 @@ body {
 }
 
 .subject-buttons button:hover {
-	background-color: silver;
+	background-color: rgb(230, 230, 230);
 	color: white;
 }
+
 
 .subject-buttons button:active {
 	box-shadow: 0 5px #666;
@@ -73,6 +74,38 @@ body {
 	font-family: 'Rubik', sans-serif;
 	font-weight: 400;
 }
+
+.only-profile-pic button {
+	z-index: -1;
+	height: 4rem;
+	width: 4rem;
+	border-radius: 60px;
+	font-size: 15;
+	font-weight: bold;
+	border: none;
+	color: rgb(179, 108, 108);
+	background-color: white;
+}
+
+.only-profile-pic button:hover {
+	background-color: rgb(230, 230, 230);
+	color: white;
+}
+
+.only-profile-pic button:active {
+	box-shadow: 0 5px #666;
+	transform: translateY(3px);
+}
+
+.button-profile {
+	margin-left: 80rem;
+	margin-top: -2.3rem;
+	padding: 3.0rem;
+	display: inline-block;
+	text-align: center;
+}
+
+
 
 .main-videos {
 	float: right;
@@ -149,36 +182,6 @@ body {
 	transform: translateY(3px);
 }
 
-.init-profile {
-	border-radius: 50%;
-	width: 3.2rem;
-	height: 3.2rem;
-	border-style: solid;
-	border-color: grey;
-	border-width: 0.2rem;
-	position: fixed;
-	float: right;
-	right: 2rem;
-	margin-right: 3rem;
-	margin-top: 0.9rem;
-	z-index: 1;
-}
-
-.clicked-profile {
-	border-radius: 50%;
-	border-style: solid;
-	border-color: white;
-	border-width: 0.2rem;
-	width: 3.2rem;
-	height: 3.2rem;
-	position: fixed;
-	opacity: 40%;
-	float: right;
-	right: 2rem;
-	margin-right: 3rem;
-	margin-top: 0.9rem;
-	z-index: 1;
-}
 
 .top-header {
 	width: 150%;
