@@ -172,6 +172,10 @@ body {
 	font-weight: 400;
 }
 
+a, u {
+	text-decoration: none;
+  }
+
 .flex-top-center-menu button:hover {
 	background: black;
 	color: white;
