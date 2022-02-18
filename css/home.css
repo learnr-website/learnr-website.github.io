@@ -41,6 +41,16 @@ body {
 	margin: 0;
 }
 
+#button-pic {
+	height: 50;
+	width: 50;
+}
+
+.subject-buttons button,
+#button-pic {
+	vertical-align: middle;
+}
+
 .subject-buttons {
 	display: inline-block;
 	text-align: center;
@@ -54,10 +64,7 @@ body {
 	height: 5.5rem;
 	width: 5.5rem;
 	border-radius: 60px;
-	font-size: 20;
-	font-weight: bold;
 	border: none;
-	color: black;
 	background-color: white;
 }
 
@@ -355,7 +362,80 @@ body {
 }
 
 @media (max-width: 500px) {
-	body {
-		background-color: blue;
+	.main-section {
+		margin-top: 34rem;
+	}
+	.init-profile {
+		display: none;
+	}
+
+	.clicked-profile {
+		display: none;
+	}
+	.top-header {
+		width: 150%;
+		height: 5.5rem;
+		background-color: #fdf6e8;
+		position: fixed;
+		top: 0rem;
+		z-index: 1;
+		overflow: auto;
+		white-space: nowrap;
+	}
+
+	.flex-logo-and-name {
+		display: flex;
+		position: fixed;
+		left: 4rem;
+		top: 0.5rem;
+		align-items: center;
+		width: max-content;
+		display: none;
+	}
+
+	.outer-slideshow {
+		justify-content: center;
+		align-items: center;
+		width: 100%;
+		right: 0rem;
+		margin-top: 0rem;
+		text-align: center;
+		z-index: 0;
+		position: absolute;
+		margin: auto;
+		max-width: 1000px;
+		overflow-x: hidden;
+		white-space: nowrap;
+	}
+
+	.prev,
+	.next {
+		cursor: pointer;
+		text-align: center;
+		justify-content: center;
+		position: relative;
+		width: 23%;
+		top: -60px;
+		color: white;
+		font-weight: bold;
+		font-size: 18px;
+		transition: 0.6s ease;
+		border-radius: 0 3px 3px 0;
+		user-select: none;
+	}
+
+	.next {
+		border-radius: 3px 0 0 3px;
+	}
+
+	.main-slideshow {
+		border-color: white;
+		border-style: solid;
+		border-width: 0.25rem;
+		line-height: 0;
+		box-sizing: content-box;
+		object-fit: contain;
+		animation-name: heading-in-videos;
+		animation-duration: 1.5s;
 	}
 }
