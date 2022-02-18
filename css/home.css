@@ -361,7 +361,7 @@ body {
 	margin-top: 9rem;
 }
 
-@media (max-width: 500px) {
+@media (max-width: 600px) {
 	.main-section {
 		margin-top: 34rem;
 	}
@@ -429,6 +429,8 @@ body {
 	}
 
 	.main-slideshow {
+		height: auto;
+		width: auto;
 		border-color: white;
 		border-style: solid;
 		border-width: 0.25rem;
