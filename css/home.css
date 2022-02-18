@@ -1,3 +1,33 @@
+* {
+	box-sizing: border-box;
+}
+
+::-webkit-scrollbar {
+	display: none;
+}
+
+@keyframes heading-in {
+	from {
+		margin-top: 0rem;
+		opacity: 0%;
+	}
+	to {
+		margin-top: 1rem;
+		opacity: 100%;
+	}
+}
+
+@keyframes heading-in-videos {
+	from {
+		margin-top: -1rem;
+		opacity: 0%;
+	}
+	to {
+		margin-top: 0rem;
+		opacity: 100%;
+	}
+}
+
 h1 {
 	text-align: left;
 	color: black;
@@ -5,25 +35,164 @@ h1 {
 }
 
 body {
-	background-color: rgb(174, 227, 240);
+	background-color: #daf5fc;
 	vertical-align: baseliine;
 	padding: 0;
 	margin: 0;
 }
 
-.main-videos {
+.subject-buttons {
+	display: inline-block;
+	text-align: center;
+	width: 100%;
+	overflow-x: auto;
+	white-space: nowrap;
+}
+
+.subject-buttons button {
+	z-index: -1;
+	height: 5.5rem;
+	width: 5.5rem;
+	border-radius: 60px;
+	font-size: 20;
+	font-weight: bold;
+	border: none;
+	color: black;
+	background-color: white;
+}
+
+.subject-buttons button:hover {
+	background: linear-gradient(to bottom, #ebdcf8 0%, #ffd1dc 100%);
+	color: white;
+}
+
+.subject-buttons button:active {
+	box-shadow: 0 5px #666;
+	transform: translateY(3px);
+}
+
+.button-label {
+	margin-left: 1.5rem;
+	margin-top: 3rem;
+	padding: 1.5rem;
+	display: inline-block;
+	text-align: center;
+}
+
+.button-label p {
+	display: block;
+	text-align: center;
+	font-family: 'Rubik', sans-serif;
+	font-weight: 400;
+}
+
+.outer-slideshow {
 	float: right;
-	top: 10rem;
+	top: 9rem;
 	right: 5rem;
 	z-index: 0;
-	display: block;
 	position: absolute;
+	margin: auto;
+	max-width: 1000px;
+}
+
+.main-slideshow {
 	border-color: white;
 	border-style: solid;
 	border-width: 0.25rem;
 	line-height: 0;
 	box-sizing: content-box;
 	object-fit: contain;
+	animation-name: heading-in-videos;
+	animation-duration: 1.5s;
+}
+
+.main-slideshow-media {
+	display: none;
+}
+
+.prev,
+.next {
+	cursor: pointer;
+	position: absolute;
+	top: 50%;
+	width: auto;
+	margin-top: -22px;
+	padding: 16px;
+	color: white;
+	font-weight: bold;
+	font-size: 18px;
+	transition: 0.6s ease;
+	border-radius: 0 3px 3px 0;
+	user-select: none;
+}
+
+.next {
+	right: 0.25rem;
+	border-radius: 3px 0 0 3px;
+}
+
+.prev:hover,
+.next:hover {
+	background: khaki;
+}
+
+.caption {
+	color: black;
+	font-size: 18px;
+	position: absolute;
+	bottom: -10px;
+	width: 100%;
+	text-align: center;
+	font-family: 'Rubik', sans-serif;
+	font-weight: 200;
+}
+
+.dot {
+	cursor: pointer;
+	height: 9px;
+	width: 9px;
+	margin: 0px 2px;
+	background-color: #bbb;
+	border-radius: 50%;
+	display: inline-block;
+	transition: background-color 0.6s ease;
+}
+
+.dots {
+	position: relative;
+	bottom: -45px;
+	text-align: center;
+}
+
+.active,
+.dot:hover {
+	background: linear-gradient(to bottom, #ebdcf8 0%, #ffd1dc 100%);
+}
+
+.fade {
+	-webkit-animation-name: fade;
+	-webkit-animation-duration: 1.5s;
+	animation-name: fade;
+	animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade {
+	from {
+		opacity: 0.4;
+	}
+	to {
+		opacity: 1;
+	}
+}
+
+@keyframes fade {
+	from {
+		opacity: 0.4;
+	}
+	to {
+		opacity: 1;
+	}
 }
 
 .flex-logo-and-name img {
@@ -114,9 +283,9 @@ body {
 }
 
 .top-header {
-	width: 100%;
+	width: 150%;
 	height: 5.5rem;
-	background-color: #faf0dc;
+	background-color: #fdf6e8;
 	position: fixed;
 	top: 0rem;
 	z-index: 1;
@@ -133,7 +302,10 @@ body {
 	box-shadow: 0 0 3px gray;
 }
 
-.main-phrase h1 {
+.main-phrase-bottom p {
+	color: transparent;
+}
+.main-phrase-top h2 {
 	width: 40%;
 	margin-left: 5rem;
 	margin-top: 1rem;
@@ -141,28 +313,32 @@ body {
 	color: black;
 	font-size: 60;
 	display: inline-block;
+	animation-name: heading-in;
+	animation-duration: 1s;
 }
 
-.main-phrase p {
+.main-phrase-top p {
 	width: 40%;
 	margin-left: 5rem;
-	margin-top: 1rem;
+	margin-top: 0.5rem;
 	font-family: 'Rubik', sans-serif;
 	color: black;
 	font-size: 20;
 	display: flex;
+	animation-name: heading-in;
+	animation-duration: 1.5s;
 }
-.main-phrase button:hover {
+.main-phrase-top button:hover {
 	background: linear-gradient(to bottom, #ebdcf8 0%, #ffd1dc 100%);
 }
 
-.main-phrase button:active {
+.main-phrase-top button:active {
 	box-shadow: 0 5px gray;
 	transform: translateY(3px);
 }
 
-.main-phrase button {
-	margin-top: 3rem;
+.main-phrase-top button {
+	margin-top: 1.5rem;
 	margin-left: 5rem;
 	border: none;
 	width: 12rem;
@@ -175,5 +351,11 @@ body {
 }
 
 .main-section {
-	margin-top: 10rem;
+	margin-top: 9rem;
+}
+
+@media (max-width: 500px) {
+	body {
+		background-color: blue;
+	}
 }

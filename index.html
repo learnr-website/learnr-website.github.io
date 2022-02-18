@@ -15,20 +15,112 @@
 	</head>
 	<body>
 		<div class="main-section">
-			<div class="main-phrase">
-				<h1>
+			<div class="main-phrase-top">
+				<h2>
 					Unlimited learning <br />
 					for free.
-				</h1>
+				</h2>
 				<p>
 					Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin lacinia
 					velit sapien, eget venenatis justo vulputate sit amet. Aenean enim
-					leo, consequat quis vestibulum in, eleifend fermentum magna.
+					leo, consequat quis vestibulum in.
 				</p>
 				<button>Get Started</button>
+			</div>
 
+			<div class="subject-buttons">
+				<div class="button-label">
+					<button type="button">
+						<img src="./assets/svgs/physics.svg" height="60" width="60" />
+					</button>
+					<p>Physics</p>
+				</div>
+				<div class="button-label">
+					<button>
+						<img src="./assets/svgs/health.svg" height="60" width="60" />
+					</button>
+					<p>Health</p>
+				</div>
+				<div class="button-label">
+					<button>
+						<img src="./assets/svgs/chemistry.svg" height="60" width="60" />
+					</button>
+					<p>Chemistry</p>
+				</div>
+				<div class="button-label">
+					<button>
+						<img src="./assets/svgs/french.svg" height="60" width="60" />
+					</button>
+					<p>French</p>
+				</div>
+				<div class="button-label">
+					<button>
+						<img src="./assets/svgs/coding.svg" height="60" width="60" />
+					</button>
+					<p>Coding</p>
+				</div>
+				<div class="button-label">
+					<button>
+						<img src="./assets/svgs/geography.svg" height="60" width="60" />
+					</button>
+					<p>Geography</p>
+				</div>
+				<div class="button-label">
+					<button>
+						<img src="./assets/svgs/math.svg" height="60" width="60" />
+					</button>
+					<p>Mathematics</p>
+				</div>
+				<div class="button-label">
+					<button>
+						<img src="./assets/svgs/bio.svg" height="60" width="60" />
+					</button>
+					<p>Biology</p>
+				</div>
+				<div class="button-label">
+					<button>
+						<img src="./assets/svgs/chinese.svg" height="60" width="60" />
+					</button>
+					<p>Chinese</p>
+				</div>
+				<div class="button-label">
+					<button>
+						<img src="./assets/svgs/video-edit.svg" height="50" width="50" />
+					</button>
+					<p>Video Editing</p>
+				</div>
+				<div class="button-label">
+					<button>
+						<img src="./assets/svgs/business.svg" height="50" width="50" />
+					</button>
+					<p>Business</p>
+				</div>
+				<div class="button-label">
+					<button>
+						<img src="./assets/svgs/photoshop.svg" height="50" width="50" />
+					</button>
+					<p>Photoshop</p>
+				</div>
+				<!-- <div class="button-label">
+					<button>P</button>
+					<p>Physics</p>
+				</div>
+				<div class="button-label">
+					<button>H</button>
+					<p>Health</p>
+				</div>
+				<div class="button-label">
+					<button>F</button>
+					<p>Physics</p>
+				</div>
+				<div class="button-label">
+					<button>P</button>
+					<p>Health</p>
+				</div> -->
+			</div>
+
+			<div class="main-phrase-bottom">
 				<p>
-					<br />
 					<br />
 					<br />
 					<br />
@@ -81,18 +173,46 @@
 					<img src="./assets/images/learnrLogo.png" alt="Origin Logo" />
 					<h1>LEARNR</h1>
 				</div>
-				<script src="./homepage.js"></script>
 				<div class="flex-top-center-menu">
 					<button>About Us</button>
-					<button>Learn More</button>
+					<button>Tutors</button>
 					<button>Donate</button>
 				</div>
 			</div>
 		</div>
-		<div class="main-videos">
-			<video width="560" height="315" controls>
-				<source src="assets/videos/test_video.mp4" type="video/mp4" />
-			</video>
+
+		<div class="outer-slideshow">
+			<div class="main-slideshow">
+				<div class="main-slideshow-media fade">
+					<div class="caption">Welcome to Learnr</div>
+					<video id="video1" width="560" height="315" controls>
+						<source src="assets/videos/stockfootage1.mp4" type="video/mp4" />
+					</video>
+				</div>
+				<div class="main-slideshow-media fade">
+					<div class="caption">Start learning today</div>
+					<video id="video2" width="560" height="315" controls>
+						<source src="assets/videos/animationfootage.mp4" type="video/mp4" />
+					</video>
+				</div>
+				<div class="main-slideshow-media fade">
+					<div class="caption">Be part of the community</div>
+					<video id="video3" width="560" height="315" controls>
+						<source src="assets/videos/rickfootage.mp4" type="video/mp4" />
+					</video>
+				</div>
+				<a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+				<a class="next" onclick="plusSlides(1)">&#10095;</a>
+			</div>
+			<div class="dots">
+				<span class="dot" onclick="currentSlide(1)"></span>
+				<span class="dot" onclick="currentSlide(2)"></span>
+				<span class="dot" onclick="currentSlide(3)"></span>
+			</div>
 		</div>
+
+		<br />
+		<br />
+		<script src="./homepage.js"></script>
 	</body>
 </html>
