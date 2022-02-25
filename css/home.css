@@ -2,7 +2,6 @@
 	box-sizing: border-box;
 }
 
-<<<<<<< HEAD
 ::-webkit-scrollbar {
 	height: 0px;
 	width: 8px;
@@ -22,9 +21,6 @@
 	border-radius: 0;
 	background: #b0b0b0;
 }
-=======
-
->>>>>>> 674a665 (new commit)
 
 @keyframes heading-in {
 	from {
@@ -71,20 +67,80 @@ body {
 	vertical-align: middle;
 }
 
-#search {
-	height: 2.2rem;
-	width: 2.2rem;
-	border-radius: 200rem;
+
+.search-bar body{
+	padding: 0;
+    margin: 0;
+    height: 100%;
+    width: 100%;
+    background: #051b33;
 }
 
-.search-bar button {
+.search-bar form {
+	position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(0%,-100%);
+    transition: all 0.8s;
+    width: 50px;
+    height: 50px;
+    background: white;
+    box-sizing: border-box;
+    border-radius: 25px;
+    border: 4px solid white;
+    padding: 5px;
+}
+
+.search-bar .fa {
+	box-sizing: border-box;
+    padding: 10px;
+    width: 42.5px;
+    height: 42.5px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    border-radius: 50%;
+    color: #07051a;
+    text-align: center;
+    font-size: 1.2em;
+    transition: all 1s;
+}
+
+
+.search-bar input {
 	position: absolute;
-	border: none;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 40px;
+    line-height: 30px;
+    outline: 0;
+    border: 0;
+    display: none;
+    font-size: 1em;
+    border-radius: 20px;
+    padding: 15px;
+}
+
+
+.search-bar form:hover{
+    width: 320px;
+    cursor: pointer;
+}
+
+.search-bar form:hover input{
+    display: block;
+}
+
+.search-bar form:hover .fa{
+    background: #07051a;
+    color: rgb(253, 253, 253);
 }
 
 .search-bar {
-	margin-top: -2.5rem;
-	margin-left: 23rem;
+	margin-top: 4.2rem;
+	margin-left: -1rem;
+	margin-right: 40rem;
 }
 
 .search-bar img {
@@ -95,18 +151,18 @@ body {
 .subject-buttons {
 	display: inline-block;
 	text-align: center;
-	width: 100%;
+	width: 86.5%;
+	margin-left: 5.7rem;
 	overflow-x: auto;
 	overflow-y: hidden;
 	white-space: nowrap;
 	background-color: #a8d5baff;
 	margin-top: 5rem;
 	height: 10rem;
-	border-width: 2.5px;
+	border-width: 3px;
 	border-style: solid;
-	border-left: none;
-	border-right: none;
-	border-color: white;
+	border-radius: 50px;
+	border-color: rgb(197, 194, 194);
 }
 
 .subject-buttons button {
@@ -154,8 +210,8 @@ body {
 
 .only-profile-pic button {
 	z-index: -1;
-	height: 4rem;
-	width: 4rem;
+	height: 3.7rem;
+	width: 3.7rem;
 	border-radius: 60px;
 	font-size: 15;
 	font-weight: bold;
@@ -180,7 +236,7 @@ body {
 
 .button-profile {
 	margin-left: 80rem;
-	margin-top: -2.3rem;
+	margin-top: -10.5rem;
 	padding: 3rem;
 	display: inline-block;
 	text-align: center;
@@ -189,7 +245,8 @@ body {
 .main-slideshow {
 	border-color: white;
 	border-style: solid;
-	border-width: 0.25rem;
+	border-radius: 21px;
+	border-width: 0.35rem;
 	line-height: 0;
 	box-sizing: content-box;
 	object-fit: contain;
@@ -197,8 +254,13 @@ body {
 	animation-duration: 1.5s;
 }
 
+
 .main-slideshow-media {
 	display: none;
+	border-radius: 16px;
+    overflow: hidden;
+    z-index: 1;
+
 }
 
 .prev,
@@ -243,7 +305,7 @@ body {
 	height: 9px;
 	width: 9px;
 	margin: 0px 2px;
-	background-color: #bbb;
+	background-color: rgb(196, 195, 195);
 	border-radius: 50%;
 	display: inline-block;
 	transition: background-color 0.6s ease;
@@ -319,6 +381,7 @@ body {
 	justify-content: center;
 	align-items: center;
 	top: 1rem;
+	right: 15rem;
 	padding: 0.5rem;
 }
 
