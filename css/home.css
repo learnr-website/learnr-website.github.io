@@ -100,6 +100,8 @@ body {
 .search-bar {
 	margin-top: 4.3rem;
 	margin-right: 22rem;
+	display: inline-block;
+	position: sticky;
 }
 
 .search-bar body {
@@ -109,7 +111,7 @@ body {
 }
 
 .search-bar form {
-	position: relative;
+	position: sticky;
 	top: 50%;
 	left: 50%;
 	transform: translate(0%, -100%);
@@ -251,12 +253,9 @@ body {
 }
 
 .only-profile-pic {
-	display: relative;
+	display: block;
+	position: sticky;
 	z-index: 1;
-	margin-top: -7.5rem;
-	margin-left: 82rem;
-	top: 2rem;
-	right: 2rem;
 }
 
 .only-profile-pic button {
@@ -405,7 +404,7 @@ body {
 }
 
 .flex-logo-and-name h1 {
-	position: relative;
+	position: sticky;
 	font-size: 1.8rem;
 	margin-left: 0.3rem;
 	font-weight: 300;
@@ -414,20 +413,17 @@ body {
 /* menu1 */
 
 .flex-logo-and-name {
-	overflow: hidden;
 	display: flex;
-	position: fixed;
-	left: 3rem;
-	top: 0.2rem;
+	position: sticky;
+	float: left;
 	align-items: center;
 	width: max-content;
 }
 
 .flex-top-center-menu {
-	overflow: hidden;
 	display: flex;
-	position: fixed;
-	width: 100%;
+	position: sticky;
+	max-width: 100%;
 	justify-content: center;
 	align-items: center;
 	top: 1rem;
@@ -441,7 +437,7 @@ body {
 	overflow: hidden;
 	border-radius: 12px;
 	background-color: white;
-	display: block;
+	display: inline-block;
 	border: none;
 	margin: 0.25rem;
 	font-family: 'Poppins', sans-serif;
@@ -464,12 +460,14 @@ u {
 }
 
 .top-header {
-	width: 150%;
 	height: 5.5rem;
-	background-color: #fdf6e8;
-	position: fixed;
-	top: 0rem;
 	z-index: 1;
+	background-color: #fdf6e8;
+	display: flex;
+	justify-content: space-between;
+	position: sticky;
+	top: 0rem;
+	overflow: hidden;
 }
 
 .round-button-circle {
