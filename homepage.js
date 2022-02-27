@@ -34,16 +34,17 @@ function currentSlide(n) {
 }
 
 // subject buttons
-buttons = document.querySelectorAll('.button-label');
-button = buttons.querySelector('button');
+buttonsColumn = document.querySelectorAll('.button-label');
+buttons = document.querySelectorAll('#button');
+buttonPs = document.querySelectorAll('#button-p');
 
-$(document).ready(function () {
-	$('button').hover(
-		function () {
-			$(this).siblings('p').addClass('subject-hover-text');
-		},
-		function () {
-			$(this).siblings('p').removeClass('subject-hover-text');
-		}
-	);
-});
+// for (let button of buttons) {
+// 	for (let buttonP of buttonPs) {
+// 		button.addEventListener('mouseover', function () {
+// 			buttonP.style.color = 'white';
+// 		});
+// 		button.addEventListener('mouseout', function () {
+// 			buttonP.style.color = 'black';
+// 		});
+// 	}
+// }
