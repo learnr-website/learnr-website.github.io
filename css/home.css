@@ -15,12 +15,28 @@
 	z-index: 1;
 }
 
+input[type='search']::-webkit-search-decoration,
+input[type='search']::-webkit-search-cancel-button,
+input[type='search']::-webkit-search-results-button,
+input[type='search']::-webkit-search-results-decoration {
+	-webkit-appearance: none;
+}
+
 @keyframes bigger {
 	from {
 		transform: scale(1);
 	}
 	to {
 		transform: scale(1.1);
+	}
+}
+
+@keyframes bigger-two {
+	from {
+		transform: scale(1);
+	}
+	to {
+		transform: scale(1.05);
 	}
 }
 
@@ -42,6 +58,17 @@
 	}
 	to {
 		margin-top: 1rem;
+		opacity: 100%;
+	}
+}
+
+@keyframes heading-in-main-phrase {
+	from {
+		margin-top: -1rem;
+		opacity: 0%;
+	}
+	to {
+		margin-top: 0rem;
 		opacity: 100%;
 	}
 }
@@ -70,9 +97,12 @@ body {
 	border-radius: 200rem;
 }
 
+.search-bar {
+	margin-top: 4.3rem;
+	margin-right: 22rem;
+}
+
 .search-bar body {
-	padding: 0;
-	margin: 0;
 	height: 100%;
 	width: 100%;
 	background: #051b33;
@@ -83,7 +113,7 @@ body {
 	top: 50%;
 	left: 50%;
 	transform: translate(0%, -100%);
-	transition: all 0.8s;
+	transition: transform 0s 0s, width 0.8s 8s;
 	width: 50px;
 	height: 50px;
 	background: white;
@@ -105,42 +135,43 @@ body {
 	color: #07051a;
 	text-align: center;
 	font-size: 1.2em;
-	transition: all 1s;
+	transition: color 0s 8s, background 0ss 8s;
 }
 
 .search-bar input {
 	position: absolute;
 	top: 0;
 	left: 0;
-	width: 100%;
+	width: 85%;
 	height: 40px;
 	line-height: 30px;
 	outline: 0;
 	border: 0;
-	display: none;
-	font-size: 1em;
+	display: block;
+	font-size: 0em;
+
 	border-radius: 20px;
 	padding: 15px;
+	transition: font-size 0s 8s;
 }
 
 .search-bar form:hover {
 	width: 320px;
 	cursor: pointer;
+	transition-delay: 0s;
 }
 
 .search-bar form:hover input {
 	display: block;
+	font-size: 1em;
+	color: black;
+	transition-delay: 0s;
 }
 
 .search-bar form:hover .fa {
 	background: #07051a;
 	color: rgb(253, 253, 253);
-}
-
-.search-bar {
-	margin-top: 4.2rem;
-	margin-left: 10rem;
-	margin-right: 40rem;
+	transition-delay: 0s;
 }
 
 .search-bar img {
@@ -156,13 +187,17 @@ body {
 	overflow-x: auto;
 	overflow-y: hidden;
 	white-space: nowrap;
-	background-color: rgba(168, 213, 186, 50%);
 	margin-top: 5rem;
 	height: 10rem;
-	border-width: 3px;
-	border-style: solid;
-	border-color: white;
-	border-radius: 50px;
+	border: double 2.5px transparent;
+	border-radius: 60px;
+	background-image: linear-gradient(
+			rgba(168, 213, 186, 50%),
+			rgba(168, 213, 186, 50%)
+		),
+		linear-gradient(to right, rgb(108, 95, 231), rgb(93, 214, 93));
+	background-origin: border-box;
+	background-clip: content-box, border-box;
 }
 
 .subject-buttons button {
@@ -249,6 +284,7 @@ body {
 	background-color: rgb(230, 230, 230);
 	color: white;
 	transform: scale(1.1);
+	animation: bigger 1s;
 }
 
 .only-profile-pic button:active {
@@ -257,18 +293,15 @@ body {
 }
 
 .main-slideshow {
-	border-style: solid;
-	border-width: 0.25rem;
-	border-color: white;
+	border: double 3px transparent;
 	border-radius: 20px;
-}
-
-.button-profile {
-	margin-left: 80rem;
-	margin-top: -10.5rem;
-	padding: 3rem;
-	display: inline-block;
-	text-align: center;
+	background-image: linear-gradient(
+			rgba(168, 213, 186, 50%),
+			rgba(168, 213, 186, 50%)
+		),
+		linear-gradient(to right, rgb(156, 219, 248), rgb(241, 131, 131));
+	background-origin: border-box;
+	background-clip: content-box, border-box;
 }
 
 .main-slideshow-media {
@@ -384,7 +417,7 @@ body {
 	overflow: hidden;
 	display: flex;
 	position: fixed;
-	left: 4rem;
+	left: 3rem;
 	top: 0.2rem;
 	align-items: center;
 	width: max-content;
@@ -398,7 +431,7 @@ body {
 	justify-content: center;
 	align-items: center;
 	top: 1rem;
-	right: 9rem;
+	right: 8rem;
 	padding: 0.5rem;
 }
 
@@ -422,6 +455,7 @@ u {
 
 .flex-top-center-menu button:hover {
 	background: linear-gradient(to bottom, #ebdcf8 0%, #ffd1dc 100%);
+	transform: scale(1.05);
 }
 
 .flex-top-center-menu button:active {
@@ -467,16 +501,19 @@ u {
 .main-phrase-top p {
 	width: 40%;
 	margin-left: 5rem;
-	margin-top: 1rem;
+	margin-top: 0rem;
 	font-family: 'Rubik', sans-serif;
 	color: black;
-	font-size: 20;
+	font-size: 18;
 	display: flex;
-	animation-name: heading-in;
+	animation-name: heading-in-main-phrase;
 	animation-duration: 1.5s;
 }
 .main-phrase-top button:hover {
 	background: linear-gradient(to bottom, #ebdcf8 0%, #ffd1dc 100%);
+	transform: scale(1.05);
+	animation-name: bigger-two;
+	animation-duration: 0.5s;
 }
 
 .main-phrase-top button:active {
@@ -485,7 +522,7 @@ u {
 }
 
 .main-phrase-top button {
-	margin-top: 1.5rem;
+	margin-top: 1rem;
 	margin-left: 5rem;
 	border: none;
 	width: 12rem;
@@ -603,7 +640,7 @@ u {
 	.search-bar {
 		display: relative;
 		margin-top: -2.5rem;
-		margin-left: 2rem;
+		margin-right: 12rem;
 	}
 
 	.outer-slideshow {
