@@ -135,7 +135,7 @@ body {
 	color: #07051a;
 	text-align: center;
 	font-size: 1.2em;
-	transition: color 0s 8s, background 0ss 8s;
+	transition: color 0s 8s, background 0s 8s;
 }
 
 .search-bar input {
