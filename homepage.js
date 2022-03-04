@@ -34,17 +34,82 @@ function currentSlide(n) {
 }
 
 // subject buttons
-buttonsColumn = document.querySelectorAll('.button-label');
-buttons = document.querySelectorAll('#button');
-buttonPs = document.querySelectorAll('#button-p');
 
-// for (let button of buttons) {
-// 	for (let buttonP of buttonPs) {
-// 		button.addEventListener('mouseover', function () {
-// 			buttonP.style.color = 'white';
-// 		});
-// 		button.addEventListener('mouseout', function () {
-// 			buttonP.style.color = 'black';
-// 		});
-// 	}
-// }
+buttonList = [
+	{ desc: 'Physics', imgSrc: './assets/svgs/physics.svg' },
+	{ desc: 'Health', imgSrc: './assets/svgs/health.svg' },
+	{ desc: 'French', imgSrc: './assets/svgs/french.svg' },
+	{ desc: 'Finances', imgSrc: './assets/svgs/business.svg' },
+	{ desc: 'College Apps', imgSrc: './assets/svgs/college.svg' },
+	{ desc: 'Coding', imgSrc: './assets/svgs/coding.svg' },
+	{ desc: 'Geography', imgSrc: './assets/svgs/geography.svg' },
+	{ desc: 'Mathematics', imgSrc: './assets/svgs/math.svg' },
+	{ desc: 'Chemistry', imgSrc: './assets/svgs/chemistry.svg' },
+	{ desc: 'Biology', imgSrc: './assets/svgs/bio.svg' },
+	{ desc: 'Chinese', imgSrc: './assets/svgs/chinese.svg' },
+	{ desc: 'Video Editing', imgSrc: './assets/svgs/video-edit.svg' },
+	{ desc: 'Photoshop', imgSrc: './assets/svgs/photoshop.svg' },
+	{ desc: 'Physics', imgSrc: './assets/svgs/physics.svg' },
+	{ desc: 'Health', imgSrc: './assets/svgs/health.svg' },
+	{ desc: 'French', imgSrc: './assets/svgs/french.svg' },
+	{ desc: 'Finances', imgSrc: './assets/svgs/business.svg' },
+	{ desc: 'College Apps', imgSrc: './assets/svgs/college.svg' },
+	{ desc: 'Coding', imgSrc: './assets/svgs/coding.svg' },
+	{ desc: 'Geography', imgSrc: './assets/svgs/geography.svg' },
+	{ desc: 'Mathematics', imgSrc: './assets/svgs/math.svg' },
+	{ desc: 'Chemistry', imgSrc: './assets/svgs/chemistry.svg' },
+	{ desc: 'Biology', imgSrc: './assets/svgs/bio.svg' },
+	{ desc: 'Chinese', imgSrc: './assets/svgs/chinese.svg' },
+	{ desc: 'Video Editing', imgSrc: './assets/svgs/video-edit.svg' },
+	{ desc: 'Photoshop', imgSrc: './assets/svgs/photoshop.svg' },
+];
+
+const makeButtons = () => {
+	document.querySelector('.subject-buttons').textContent = '';
+
+	for (button of buttonList) {
+		const btnDiv = document.createElement('div');
+		const btn = document.createElement('button');
+		const btnDesc = document.createElement('p');
+		const btnImg = document.createElement('img');
+		btnDiv.appendChild(btn);
+		btnDiv.appendChild(btnDesc);
+		btn.appendChild(btnImg);
+		btnDiv.classList.add('button-label');
+		btn.classList.add('button-bubble');
+		btnDesc.classList.add('button-p');
+		btnImg.classList.add('button-img');
+
+		btnImg.src = button.imgSrc;
+		btnDesc.innerText = button.desc;
+		document.querySelector('.subject-buttons').appendChild(btnDiv);
+	}
+};
+
+makeButtons();
+// subject button click
+
+subjectRight = document.querySelector('.subject-arrow-right');
+subjectLeft = document.querySelector('.subject-arrow-left');
+
+subjectRight.addEventListener('mouseover', function () {
+	subjectRight.classList.add('subject-arrow-hovered');
+	subjectRight.addEventListener('mouseout', function () {
+		subjectRight.classList.remove('subject-arrow-hovered');
+	});
+});
+
+subjectLeft.addEventListener('mouseover', function () {
+	subjectLeft.classList.add('subject-arrow-hovered');
+	subjectLeft.addEventListener('mouseout', function () {
+		subjectLeft.classList.remove('subject-arrow-hovered');
+	});
+});
+
+subjectRight.addEventListener('click', function () {
+	document.querySelector('.subject-buttons').scrollLeft += 615;
+});
+
+subjectLeft.addEventListener('click', function () {
+	document.querySelector('.subject-buttons').scrollLeft -= 615;
+});

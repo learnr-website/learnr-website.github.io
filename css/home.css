@@ -86,11 +86,6 @@ body {
 	margin: 0;
 }
 
-#button-pic {
-	height: 50;
-	width: 50;
-}
-
 #search {
 	height: 2.2rem;
 	width: 2.2rem;
@@ -180,14 +175,14 @@ body {
 }
 
 .subject-buttons {
+	vertical-align: middle;
 	display: inline-block;
 	text-align: center;
 	width: 86.5%;
-	margin-left: 5.7rem;
-	overflow-x: auto;
+	scroll-behavior: smooth;
+	overflow-x: scroll;
 	overflow-y: hidden;
 	white-space: nowrap;
-	margin-top: 5rem;
 	height: 10rem;
 	border: double 2.5px transparent;
 	border-radius: 60px;
@@ -198,6 +193,10 @@ body {
 		linear-gradient(to right, rgb(108, 95, 231), rgb(93, 214, 93));
 	background-origin: border-box;
 	background-clip: content-box, border-box;
+}
+
+.edge-button {
+	opacity: 50%;
 }
 
 .subject-buttons button {
@@ -225,8 +224,14 @@ body {
 	color: white;
 }
 
+.button-img {
+	height: 50;
+	width: 50;
+}
+
 .button-label {
-	margin-left: 1.5rem;
+	margin-left: 0.9rem;
+	margin-right: 0.9rem;
 	padding: 1.1rem;
 	display: inline-block;
 	text-align: center;
@@ -257,6 +262,55 @@ body {
 	margin-left: 82rem;
 	top: 2rem;
 	right: 2rem;
+}
+
+.subject-arrow-right {
+	display: inline-block;
+	margin-left: 1rem;
+	height: 1.5rem;
+	line-height: 1.5rem;
+	width: 1.5rem;
+	border-radius: 6px;
+	border: none;
+	text-align: center;
+	background-color: rgba(93, 214, 93, 50%);
+}
+
+.subject-arrow-left {
+	display: inline-block;
+	margin-right: 1rem;
+	height: 1.5rem;
+	line-height: 1.5rem;
+	width: 1.5rem;
+	border-radius: 6px;
+	border: none;
+	text-align: center;
+	background-color: rgba(108, 95, 231, 50%);
+}
+
+.subject-arrow-left a {
+	display: inline-block;
+	vertical-align: middle;
+}
+
+.subject-arrow {
+	vertical-align: middle;
+	display: inline-block;
+	color: white;
+}
+
+.subject-arrow-hovered {
+	opacity: 100%;
+	transform: scale(1.1);
+}
+
+.subject-row {
+	margin-top: 5rem;
+	overflow-x: auto;
+	display: block;
+	align-items: center;
+	text-align: center;
+	justify-content: center;
 }
 
 .only-profile-pic button {
@@ -483,8 +537,28 @@ u {
 	box-shadow: 0 0 3px gray;
 }
 
+.thread-box {
+	position: relative;
+	left: 5rem;
+	background-color: white;
+	margin-top: 2rem;
+	height: 20rem;
+	width: 60rem;
+}
+
+.main-phrase-bottom {
+	position: relative;
+	margin-top: 5rem;
+	left: 5rem;
+	font-size: 30px;
+}
+
+.main-phrase-bottom h3 {
+	font-family: 'Rubik', serif;
+}
+
 .main-phrase-bottom p {
-	color: transparent;
+	color: white;
 }
 .main-phrase-top h2 {
 	width: 40%;
