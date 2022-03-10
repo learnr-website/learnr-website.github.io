@@ -3,9 +3,9 @@
 function showSlides(n) {
 	let i;
 	let slides = document.querySelectorAll('.main-slideshow-media');
+	console.log(slides);
 	let dots = document.querySelectorAll('.dot');
 	if (n > slides.length) {
-		console.log(slides.length);
 		slideIndex = 1;
 	}
 	if (n < 1) {
@@ -72,9 +72,11 @@ const makeButtons = () => {
 		const btn = document.createElement('button');
 		const btnDesc = document.createElement('p');
 		const btnImg = document.createElement('img');
+
 		btnDiv.appendChild(btn);
 		btnDiv.appendChild(btnDesc);
 		btn.appendChild(btnImg);
+
 		btnDiv.classList.add('button-label');
 		btn.classList.add('button-bubble');
 		btnDesc.classList.add('button-p');
