@@ -35,7 +35,7 @@ function currentSlide(n) {
 
 // subject buttons
 
-buttonList = [
+const buttonList = [
 	{ desc: 'Physics', imgSrc: './assets/svgs/physics.svg' },
 	{ desc: 'Health', imgSrc: './assets/svgs/health.svg' },
 	{ desc: 'French', imgSrc: './assets/svgs/french.svg' },
@@ -91,8 +91,8 @@ const makeButtons = () => {
 makeButtons();
 // subject button click
 
-subjectRight = document.querySelector('.subject-arrow-right');
-subjectLeft = document.querySelector('.subject-arrow-left');
+const subjectRight = document.querySelector('.subject-arrow-right');
+const subjectLeft = document.querySelector('.subject-arrow-left');
 
 subjectRight.addEventListener('mouseover', function () {
 	subjectRight.classList.add('subject-arrow-hovered');

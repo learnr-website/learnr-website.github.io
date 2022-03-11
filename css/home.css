@@ -208,6 +208,10 @@ body {
 	background-color: white;
 }
 
+.thread-box {
+	border-radius: 30px;
+}
+
 .subject-buttons button:hover {
 	background: linear-gradient(to bottom, #ebdcf8 0%, #ffd1dc 100%);
 	transform: scale(1.1);
@@ -609,6 +613,7 @@ u {
 }
 
 .main-section {
+	display: flex;
 	margin-top: 9rem;
 }
 
