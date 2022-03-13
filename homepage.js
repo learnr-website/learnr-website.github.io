@@ -69,8 +69,11 @@ const makeButtons = () => {
 
 	for (button of buttonList) {
 		const btnDiv = document.createElement('div');
+
 		const btn = document.createElement('button');
+
 		const btnDesc = document.createElement('p');
+
 		const btnImg = document.createElement('img');
 
 		btnDiv.appendChild(btn);
