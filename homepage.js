@@ -1,5 +1,31 @@
 // slideshow
 
+const prev = document.querySelector('.prev');
+const next = document.querySelector('.next');
+const dotOne = document.querySelector('#dot-one');
+const dotTwo = document.querySelector('#dot-two');
+const dotThree = document.querySelector('#dot-three');
+
+prev.addEventListener('click', () => {
+	plusSlides(-1);
+});
+
+next.addEventListener('click', () => {
+	plusSlides(1);
+});
+
+dotOne.addEventListener('click', () => {
+	currentSlide(1);
+});
+
+dotTwo.addEventListener('click', () => {
+	currentSlide(2);
+});
+
+dotThree.addEventListener('click', () => {
+	currentSlide(3);
+});
+
 function showSlides(n) {
 	let i;
 	let slides = document.querySelectorAll('.main-slideshow-media');
@@ -47,7 +73,7 @@ const buttonList = [
 	{ desc: 'Chemistry', imgSrc: './assets/svgs/chemistry.svg' },
 	{ desc: 'Biology', imgSrc: './assets/svgs/bio.svg' },
 	{ desc: 'Chinese', imgSrc: './assets/svgs/chinese.svg' },
-	{ desc: 'Video Editing', imgSrc: './assets/svgs/video-edit.svg' },
+	{ desc: 'Video Editing', imgSrc: './assets/svgs/videoedit.svg' },
 	{ desc: 'Photoshop', imgSrc: './assets/svgs/photoshop.svg' },
 	{ desc: 'Physics', imgSrc: './assets/svgs/physics.svg' },
 	{ desc: 'Health', imgSrc: './assets/svgs/health.svg' },
@@ -60,7 +86,7 @@ const buttonList = [
 	{ desc: 'Chemistry', imgSrc: './assets/svgs/chemistry.svg' },
 	{ desc: 'Biology', imgSrc: './assets/svgs/bio.svg' },
 	{ desc: 'Chinese', imgSrc: './assets/svgs/chinese.svg' },
-	{ desc: 'Video Editing', imgSrc: './assets/svgs/video-edit.svg' },
+	{ desc: 'Video Editing', imgSrc: './assets/svgs/videoedit.svg' },
 	{ desc: 'Photoshop', imgSrc: './assets/svgs/photoshop.svg' },
 ];
 
