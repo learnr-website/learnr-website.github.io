@@ -203,21 +203,21 @@ for (let i = 0; i < postInfo.postTitles.length; i++) {
 	postTitle.innerHTML = `${postInfo.postTitles[i]}`;
 	postDesc.innerHTML = `${postInfo.postDescs[i]}`;
 	topReply.innerHTML = `<b>Top reply:</b> ${postInfo.topReplies[i]}`;
-	postButton.innerHTML = `More replies`;
+	postButton.innerHTML = `<span>More replies</span> &#8594;`;
 	posterName.innerHTML = `BY ${postInfo.posterNames[i]}`;
 	likeCount.innerHTML = `${postInfo.likeCounts[i]} LIKES`;
 	commentCount.innerHTML = `${postInfo.commentCounts[i]} COMMENTS`;
 	categoryName.innerHTML = `${postInfo.categoryNames[i]}`;
 
-	postButton.addEventListener('mouseover', () => {
-		postButton.style.transform = 'scale(1.05)';
-		postButton.style.backgroundColor = 'black';
-		postButton.addEventListener('mouseout', () => {
-			postButton.style.transform = 'scale(1.0)';
-			postButton.style.backgroundColor = 'rgb(128, 224, 248)';
-		});
-		console.log('works');
-	});
+	// postButton.addEventListener('mouseover', () => {
+	// 	postButton.style.transform = 'scale(1.05)';
+	// 	postButton.style.backgroundColor = 'black';
+	// 	postButton.addEventListener('mouseout', () => {
+	// 		postButton.style.transform = 'scale(1.0)';
+	// 		postButton.style.backgroundColor = 'rgb(128, 224, 248)';
+	// 	});
+	// 	console.log('works');
+	// });
 
 	document.querySelector('.top-questions').appendChild(threadBox);
 }
