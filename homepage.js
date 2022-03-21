@@ -147,43 +147,80 @@ subjectLeft.addEventListener('click', function () {
 // posts of the day
 
 const postInfo = {
-	postTitles: [
-		'What is on your mind?',
-		'Why do echo chambers exist?',
-		`Has the Big Bang theory been 100% scientifically proven yet?`,
-	],
-	postDescs: [
-		'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin lacinia velit sapien, eget venenatis justo vulputate sit amet. Aenean enim leo, consequat quis vestibulum in, eleifend fermentum magna.',
-		'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin lacinia velit sapien, eget venenatis justo vulputate sit amet. Aenean enim leo, consequat quis vestibulum in, eleifend fermentum magna.',
-		'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin lacinia velit sapien, eget venenatis justo vulputate sit amet. Aenean enim leo, consequat quis ',
-	],
-	topReplies: [
-		'insert the answer to what is on your mind',
-		'insert the answer to why echo chambers exist',
-		'insert the answer to the reason the big bang theory is accurate',
-	],
-	posterNames: ['LEARNERNAME', 'GENERICCARP', 'WHOSHALLNOTBENAMED'],
-	likeCounts: ['1.3K', '598', '789'],
-	commentCounts: ['2.2K', '999', '405'],
-	categoryNames: ['GENERAL KNOWLEDGE', 'POLITICS', 'PHYSICS'],
+	postTitles: {
+		questions: [
+			'What is on your mind?',
+			'Why do echo chambers exist?',
+			`Has the Big Bang theory been 100% scientifically proven yet?`,
+		],
+		polls: [
+			'Are there more doors or wheels in the world?',
+			'Are we heading towards a great depression?',
+			`Should I get a doctorate's?`,
+		],
+		stories: ['random story here', 'random story there', 'random story again'],
+	},
+	postDescs: {
+		questions: [
+			'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin lacinia velit sapien, eget venenatis justo vulputate sit amet. Aenean enim leo, consequat quis vestibulum in, eleifend fermentum magna.',
+			'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin lacinia velit sapien, eget venenatis justo vulputate sit amet. Aenean enim leo, consequat quis vestibulum in, eleifend fermentum magna.',
+			'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin lacinia velit sapien, eget venenatis justo vulputate sit amet. Aenean enim leo, consequat quis ',
+		],
+		polls: [
+			'If you counted them all, which one would have a bigger amount?',
+			'Economy blah blah blah blah blah',
+			'',
+		],
+		stories: [],
+	},
+	topReplies: {
+		questions: [
+			'insert the answer to what is on your mind',
+			'insert the answer to why echo chambers exist',
+			'insert the answer to the reason the big bang theory is accurate',
+		],
+		polls: ['insert interesting reply', 'insert interesting reply'],
+		stories: [],
+	},
+	posterNames: {
+		questions: ['LEARNERNAME', 'GENERICCARP', 'WHOSHALLNOTBENAMED'],
+		polls: ['JOEDUDE333', 'ECONOMICSBAHA'],
+		stories: [],
+	},
+	likeCounts: {
+		questions: ['1.3K', '598', '789'],
+		polls: ['2.4K', '1.5K'],
+		stories: [],
+	},
+	commentCounts: {
+		questions: ['2.2K', '991', '405'],
+		polls: ['2.6K', '1.1K'],
+		stories: [],
+	},
+	categoryNames: {
+		questions: ['GENERAL KNOWLEDGE', 'POLITICS', 'PHYSICS'],
+		polls: ['JUST FOR FUN', 'ECONOMICS'],
+		stories: [],
+	},
 };
 
 document.querySelector('.top-questions').innerHTML = '';
 
-for (let i = 0; i < postInfo.postTitles.length; i++) {
+for (let i = 0; i < postInfo.postTitles.questions.length; i++) {
+	const wrapper = document.createElement('div');
 	const threadBox = document.createElement('div');
-
 	const leftSide = document.createElement('div');
 	const rightSide = document.createElement('div');
 	const postTitle = document.createElement('h3');
 	const postDesc = document.createElement('p');
 	const topReply = document.createElement('p');
 	const postButton = document.createElement('button');
-	const posterName = document.createElement('h3');
+	const posterName = document.createElement('h4');
 	const likeCount = document.createElement('p');
 	const commentCount = document.createElement('p');
-	const categoryName = document.createElement('h4');
+	const categoryName = document.createElement('h3');
 
+	wrapper.appendChild(threadBox);
 	threadBox.appendChild(leftSide);
 	threadBox.appendChild(rightSide);
 	leftSide.appendChild(postTitle);
@@ -199,15 +236,16 @@ for (let i = 0; i < postInfo.postTitles.length; i++) {
 	leftSide.classList.add('top-question-left-side');
 	rightSide.classList.add('top-question-right-side');
 	postButton.classList.add('top-question-button');
+	wrapper.classList.add('wrapper');
 
-	postTitle.innerHTML = `${postInfo.postTitles[i]}`;
-	postDesc.innerHTML = `${postInfo.postDescs[i]}`;
-	topReply.innerHTML = `<b>Top reply:</b> ${postInfo.topReplies[i]}`;
+	postTitle.innerHTML = `${postInfo.postTitles.questions[i]}`;
+	postDesc.innerHTML = `${postInfo.postDescs.questions[i]}`;
+	topReply.innerHTML = `<b>Top reply:</b> ${postInfo.topReplies.questions[i]}`;
 	postButton.innerHTML = `<span>More replies</span> &#8594;`;
-	posterName.innerHTML = `BY ${postInfo.posterNames[i]}`;
-	likeCount.innerHTML = `${postInfo.likeCounts[i]} LIKES`;
-	commentCount.innerHTML = `${postInfo.commentCounts[i]} COMMENTS`;
-	categoryName.innerHTML = `${postInfo.categoryNames[i]}`;
+	posterName.innerHTML = `BY ${postInfo.posterNames.questions[i]}`;
+	likeCount.innerHTML = `<b>${postInfo.likeCounts.questions[i]}</b> <img src="assets/svgs/like.svg" alt="LIKES" />`;
+	commentCount.innerHTML = `<b>${postInfo.commentCounts.questions[i]}</b> <img src="assets/svgs/comment.svg" alt="COMMENTS" />`;
+	categoryName.innerHTML = `${postInfo.categoryNames.questions[i]}`;
 
 	// postButton.addEventListener('mouseover', () => {
 	// 	postButton.style.transform = 'scale(1.05)';
@@ -219,5 +257,136 @@ for (let i = 0; i < postInfo.postTitles.length; i++) {
 	// 	console.log('works');
 	// });
 
-	document.querySelector('.top-questions').appendChild(threadBox);
+	document.querySelector('.top-questions').appendChild(wrapper);
+}
+
+for (let i = 0; i < postInfo.postTitles.polls.length; i++) {
+	const wrapper = document.createElement('div');
+	const threadBox = document.createElement('div');
+	const leftSide = document.createElement('div');
+	const rightSide = document.createElement('div');
+	const postTitle = document.createElement('h3');
+	const postDesc = document.createElement('p');
+	const topReply = document.createElement('p');
+	const postButton = document.createElement('button');
+	const posterName = document.createElement('h4');
+	const likeCount = document.createElement('p');
+	const commentCount = document.createElement('p');
+	const categoryName = document.createElement('h3');
+
+	wrapper.appendChild(threadBox);
+	threadBox.appendChild(leftSide);
+	threadBox.appendChild(rightSide);
+	leftSide.appendChild(postTitle);
+	leftSide.appendChild(postDesc);
+	leftSide.appendChild(topReply);
+	leftSide.appendChild(postButton);
+	rightSide.appendChild(posterName);
+	rightSide.appendChild(likeCount);
+	rightSide.appendChild(commentCount);
+	rightSide.appendChild(categoryName);
+
+	threadBox.classList.add('thread-box');
+	leftSide.classList.add('top-question-left-side');
+	rightSide.classList.add('top-question-right-side');
+	postButton.classList.add('top-question-button');
+	wrapper.classList.add('wrapper');
+
+	postTitle.innerHTML = `${postInfo.postTitles.polls[i]}`;
+	postDesc.innerHTML = `${postInfo.postDescs.polls[i]}`;
+	topReply.innerHTML = `<b>Top reply:</b> ${postInfo.topReplies.polls[i]}`;
+	postButton.innerHTML = `<span>More replies</span> &#8594;`;
+	posterName.innerHTML = `BY ${postInfo.posterNames.polls[i]}`;
+	likeCount.innerHTML = `<b>${postInfo.likeCounts.polls[i]}</b> <img src="assets/svgs/like.svg" alt="LIKES" />`;
+	commentCount.innerHTML = `<b>${postInfo.commentCounts.polls[i]}</b> <img src="assets/svgs/comment.svg" alt="COMMENTS" />`;
+	categoryName.innerHTML = `${postInfo.categoryNames.polls[i]}`;
+
+	// postButton.addEventListener('mouseover', () => {
+	// 	postButton.style.transform = 'scale(1.05)';
+	// 	postButton.style.backgroundColor = 'black';
+	// 	postButton.addEventListener('mouseout', () => {
+	// 		postButton.style.transform = 'scale(1.0)';
+	// 		postButton.style.backgroundColor = 'rgb(128, 224, 248)';
+	// 	});
+	// 	console.log('works');
+	// });
+
+	document.querySelector('.top-polls').appendChild(wrapper);
+}
+
+for (let i = 0; i < postInfo.postTitles.stories.length; i++) {
+	const wrapper = document.createElement('div');
+	const threadBox = document.createElement('div');
+	const leftSide = document.createElement('div');
+	const rightSide = document.createElement('div');
+	const postTitle = document.createElement('h3');
+	const postDesc = document.createElement('p');
+	const topReply = document.createElement('p');
+	const postButton = document.createElement('button');
+	const posterName = document.createElement('h4');
+	const likeCount = document.createElement('p');
+	const commentCount = document.createElement('p');
+	const categoryName = document.createElement('h3');
+
+	wrapper.appendChild(threadBox);
+	threadBox.appendChild(leftSide);
+	threadBox.appendChild(rightSide);
+	leftSide.appendChild(postTitle);
+	leftSide.appendChild(postDesc);
+	leftSide.appendChild(topReply);
+	leftSide.appendChild(postButton);
+	rightSide.appendChild(posterName);
+	rightSide.appendChild(likeCount);
+	rightSide.appendChild(commentCount);
+	rightSide.appendChild(categoryName);
+
+	threadBox.classList.add('thread-box');
+	leftSide.classList.add('top-question-left-side');
+	rightSide.classList.add('top-question-right-side');
+	postButton.classList.add('top-question-button');
+	wrapper.classList.add('wrapper');
+
+	postTitle.innerHTML = `${postInfo.postTitles.stories[i]}`;
+	postDesc.innerHTML = `${postInfo.postDescs.stories[i]}`;
+	topReply.innerHTML = `<b>Top reply:</b> ${postInfo.topReplies.stories[i]}`;
+	postButton.innerHTML = `<span>More replies</span> &#8594;`;
+	posterName.innerHTML = `BY ${postInfo.posterNames.stories[i]}`;
+	likeCount.innerHTML = `<b>${postInfo.likeCounts.stories[i]}</b> <img src="assets/svgs/like.svg" alt="LIKES" />`;
+	commentCount.innerHTML = `<b>${postInfo.commentCounts.stories[i]}</b> <img src="assets/svgs/comment.svg" alt="COMMENTS" />`;
+	categoryName.innerHTML = `${postInfo.categoryNames.stories[i]}`;
+
+	// postButton.addEventListener('mouseover', () => {
+	// 	postButton.style.transform = 'scale(1.05)';
+	// 	postButton.style.backgroundColor = 'black';
+	// 	postButton.addEventListener('mouseout', () => {
+	// 		postButton.style.transform = 'scale(1.0)';
+	// 		postButton.style.backgroundColor = 'rgb(128, 224, 248)';
+	// 	});
+	// 	console.log('works');
+	// });
+
+	document.querySelector('.top-stories').appendChild(wrapper);
+}
+
+// wipe-in animation
+// Create the observer
+let observer = new IntersectionObserver((entries) => {
+	// Loop over the entries
+	entries.forEach((entry) => {
+		const square = entry.target.querySelector('.thread-box');
+		// If the element is visible
+		if (entry.isIntersecting) {
+			square.classList.add('thread-box-animation');
+			return; // if we added the class, exit the function
+		}
+
+		// We're not intersecting, so remove the class!
+		square.classList.remove('thread-box-animation');
+	});
+});
+
+console.log(document.querySelectorAll('.wrapper'));
+// Tell the observer which elements to track
+for (let wrapper of document.querySelectorAll('.wrapper')) {
+	observer.observe(wrapper);
 }
