@@ -370,23 +370,40 @@ for (let i = 0; i < postInfo.postTitles.stories.length; i++) {
 
 // wipe-in animation
 // Create the observer
-let observer = new IntersectionObserver((entries) => {
-	// Loop over the entries
-	entries.forEach((entry) => {
-		const square = entry.target.querySelector('.thread-box');
-		// If the element is visible
-		if (entry.isIntersecting) {
-			square.classList.add('thread-box-animation');
-			return; // if we added the class, exit the function
-		}
 
-		// We're not intersecting, so remove the class!
-		square.classList.remove('thread-box-animation');
-	});
-});
+let scroll =
+	window.requestAnimationFrame ||
+	function (callback) {
+		window.setTimeout(callback, 1000 / 60);
+	};
 
-console.log(document.querySelectorAll('.wrapper'));
-// Tell the observer which elements to track
-for (let wrapper of document.querySelectorAll('.wrapper')) {
-	observer.observe(wrapper);
+let threadsToShow = document.querySelectorAll('.thread-box');
+
+function isElementInViewport(el) {
+	if (typeof jQuery === 'function' && el instanceof jQuery) {
+		el = el[0];
+	}
+	var rect = el.getBoundingClientRect();
+	return (
+		(rect.top <= 0 && rect.bottom >= 0) ||
+		(rect.bottom >=
+			(window.innerHeight || document.documentElement.clientHeight) &&
+			rect.top <=
+				(window.innerHeight || document.documentElement.clientHeight)) ||
+		(rect.top >= 0 &&
+			rect.bottom <=
+				(window.innerHeight || document.documentElement.clientHeight))
+	);
 }
+function loop() {
+	threadsToShow.forEach(function (element) {
+		if (isElementInViewport(element)) {
+			element.classList.add('is-on');
+		} else {
+			element.classList.remove('is-on');
+		}
+	});
+	scroll(loop);
+}
+
+loop();
